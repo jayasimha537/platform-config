@@ -39,9 +39,27 @@ spec:
             - dev
             - stg
             - prd
+    - title: Choose a location
+      required:
+        - repoUrl
+      properties:
+        repoUrl:
+          title: Repository Location
+          type: string
+          ui:field: RepoUrlPicker
+          ui:options:
+            allowedHosts:
+              - github.com
   steps:
     - id: debug
       name: Debug message
       action: 'debug:log'
       input:
         message: '${{ parameters.serviceName }} ${{ parameters.envName }}'
+    - id: publish
+      name: Publish
+      action: publish:github
+      input:
+        allowedHosts: ['github.com']
+        description: This is ${{ parameters.serviceName }}
+        repoUrl: ${{ parameters.repoUrl }}
