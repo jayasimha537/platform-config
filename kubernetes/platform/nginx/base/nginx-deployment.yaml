@@ -14,7 +14,7 @@ spec:
         app: nginx
     spec:
       containers:
-      - image: gcr.io/heptio-images/ks-nginx-demo:latest
-        name: nginx
-        ports:
-        - containerPort: 80
+        - image: nginx
+          name: nginx
+          ports:
+          - containerPort: 80
