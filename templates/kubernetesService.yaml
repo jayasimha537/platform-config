@@ -16,12 +16,20 @@ spec:
         - serviceName
         - envName
     properties:
+
         serviceName:
             title: Name
             type: string
             pattern: "^([a-z0-9\\-]+)$"
             description: Unique name of the component
             ui:autofocus: true
+        componentName:
+            title: Component Name
+            description: 'Component Name'
+            type: string
+            default: dev
+            enum:
+              - platform
         description:
             title: Description
             type: string
