@@ -1,52 +1,49 @@
 apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
 metadata:
-    name: kubernetes-service-template
-    title: Kubernetes Service Template
-    description: Create a new Kubernetes Service
-    tags:
-        - kubernetes
+  name: kubernetes-service-template
+  title: Kubernetes Service Template
+  description: Create a new Kubernetes Service
+  tags:
+    - kubernetes
 spec:
-    owner: group:guest
-    type: component
-
-    parameters:
+  owner: 'group:guest'
+  type: component
+  parameters:
     - title: Provide some simple information
       required:
         - serviceName
         - envName
       properties:
         serviceName:
-            title: Name
-            type: string
-            pattern: "^([a-z0-9\\-]+)$"
-            description: Unique name of the component
-            ui:autofocus: true
+          title: Name
+          type: string
+          pattern: '^([a-z0-9\-]+)$'
+          description: Unique name of the component
+          'ui:autofocus': true
         componentName:
-            title: Component Name
-            description: 'Component Name'
-            type: string
-            default: dev
-            enum:
-              - platform
+          title: Component Name
+          description: Component Name
+          type: string
+          default: dev
+          enum:
+            - platform
         description:
-            title: Description
-            type: string
-            description: Help others understand what this website is for.
+          title: Description
+          type: string
+          description: Help others understand what this website is for.
         envName:
-            title: Environment
-            description: 'Environment to create resources'
-            type: string
-            default: dev
-            enum:
-              - dev
-              - stg
-              - prd
-    
-    steps:
-        - id: debug
-          name: Debug message
-          action: debug:log
-          input:
-            message: ${{ parameters.serviceName }} ${{ parameters.envName }}
-         
+          title: Environment
+          description: Environment to create resources
+          type: string
+          default: dev
+          enum:
+            - dev
+            - stg
+            - prd
+  steps:
+    - id: debug
+      name: Debug message
+      action: 'debug:log'
+      input:
+        message: '${{ parameters.serviceName }} ${{ parameters.envName }}'
