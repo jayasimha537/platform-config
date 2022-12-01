@@ -4,11 +4,9 @@ metadata:
     name: kubernetes-service-template
     title: Kubernetes Service Template
     description: Create a new Kubernetes Service
-    tags:
-        - kubernetes
 spec:
-    owner: group:guest
-    type: component
+    owner: user:guest
+    type: service
 
     parameters:
     - title: Provide some simple information
