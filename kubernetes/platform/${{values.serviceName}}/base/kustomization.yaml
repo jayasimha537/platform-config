@@ -1,8 +1,8 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-- nginx-deployment.yaml
-- nginx-svc.yaml
+- ${{values.serviceName}}-deployment.yaml
+- ${{values.serviceName}}-svc.yaml
 
 bases:
   - ../../base
