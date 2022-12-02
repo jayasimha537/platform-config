@@ -7,6 +7,6 @@ namePrefix: ${{values.envName}}-
 
 commonLabels:
   env: ${{values.envName}}
-  backstage.io/kubernetes-id: ${{values.componentName | dump}}
+  backstage.io/kubernetes-id: ${{values.componentName}}-${{values.serviceName}}-${{values.envName}}
 bases:
   - ../base
