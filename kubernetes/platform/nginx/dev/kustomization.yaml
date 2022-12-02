@@ -7,6 +7,6 @@ namePrefix: dev-
 
 commonLabels:
   env: dev
-  backstage.io/kubernetes-id: "platform"
+  backstage.io/kubernetes-id: "platform-nginx-dev"
 bases:
   - ../base
